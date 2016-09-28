@@ -1,0 +1,11 @@
+{
+  "name": "ci-lab-server",
+  "version": "1.0.0",
+  "description": "Static server for CI lab",
+  "main": "server.js",
+  "author": "Scott Logic",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
