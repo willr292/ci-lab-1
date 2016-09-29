@@ -4,14 +4,14 @@ function initController() {
 		cell.addEventListener("click", function(event) {
 			var rowClicked = event.target.id.charAt(0) - 1;
 			var columnClicked = event.target.id.charAt(1) - 1;
-			board = updateBoard(board, rowClicked, columnClicked);
+			model = updateModel(model, rowClicked, columnClicked);
 			render();
 		});
 	});
 
 }
 
-function updateBoard(board, rowClicked, columnClicked) {
+function updateModel(model, rowClicked, columnClicked) {
 	console.log('clicked '+rowClicked+columnClicked);
-	return board;
+	return model;
 }
