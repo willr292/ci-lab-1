@@ -10,14 +10,14 @@ body {
     border: 1px solid black;
 }
 
-.board-cell:before {
+.board-cell-empty:before {
     content: '-';
 }
 
-.board-cell.nought:before {
+.board-cell-nought:before {
     content: 'O';
 }
 
-.board-cell.cross:before {
+.board-cell-cross:before {
     content: 'X';
 }
