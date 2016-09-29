@@ -5,24 +5,24 @@
     <title>CI lab</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript" src="board.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
   </head>
-  <body onload="render()">
+  <body onload="initController();render()">
     <h1>CI lab - tic tac toe</h1>
     <div class="board-row">
-        <span id="11" class="board-cell-nought"></span>
-        <span id="21" class="board-cell-cross"></span>
-        <span id="31" class="board-cell-empty"></span>
+        <span id="11" class="board-cell"></span>
+        <span id="21" class="board-cell"></span>
+        <span id="31" class="board-cell"></span>
     </div>
     <div class="board-row">
-        <span id="12" class="board-cell-empty"></span>
-        <span id="22" class="board-cell-empty"></span>
-        <span id="32" class="board-cell-empty"></span>
+        <span id="12" class="board-cell"></span>
+        <span id="22" class="board-cell"></span>
+        <span id="32" class="board-cell"></span>
     </div>
     <div class="board-row">
-        <span id="13" class="board-cell-empty"></span>
-        <span id="23" class="board-cell-empty"></span>
-        <span id="33" class="board-cell-empty"></span>
+        <span id="13" class="board-cell"></span>
+        <span id="23" class="board-cell"></span>
+        <span id="33" class="board-cell"></span>
     </div>
   </body>
 </html>
-
