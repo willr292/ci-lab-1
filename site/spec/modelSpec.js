@@ -58,4 +58,41 @@ describe("applyClick", function() {
 		expect(model.isNoughtToPlay).toEqual(false);
 	});
 
+	it("indicates the game is not over if it isn't", function() {
+		var model = modelBuilder().build();
+		model.applyClick(0, 0);
+		model.applyClick(0, 1);
+		model.applyClick(0, 2);
+		expect(model.isGameOver).toEqual(false);
+		expect(model.winner).toBeFalsy();
+	});
+
+	it("recognises a horizontal win for crosses", function() {
+		var model = modelBuilder().crossAt(1, 0).crossAt(1, 1).crossToPlay().build();
+		model.applyClick(1, 2);
+		expect(model.isGameOver).toEqual(true);
+		expect(model.winner).toEqual("cross");
+	});
+
+	it("recognises a vertical win for crosses", function() {
+		var model = modelBuilder().crossAt(1, 0).crossAt(2, 0).crossToPlay().build();
+		model.applyClick(0, 0);
+		expect(model.isGameOver).toEqual(true);
+		expect(model.winner).toEqual("cross");
+	});
+
+	it("recognises a horizontal win for noughts", function() {
+		var model = modelBuilder().noughtAt(1, 0).noughtAt(1, 1).noughtToPlay().build();
+		model.applyClick(1, 2);
+		expect(model.isGameOver).toEqual(true);
+		expect(model.winner).toEqual("nought");
+	});
+
+	it("recognises a vertical win for noughts", function() {
+		var model = modelBuilder().noughtAt(1, 0).noughtAt(2, 0).noughtToPlay().build();
+		model.applyClick(0, 0);
+		expect(model.isGameOver).toEqual(true);
+		expect(model.winner).toEqual("nought");
+	});
+
 });
