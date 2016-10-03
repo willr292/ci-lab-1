@@ -1,0 +1,16 @@
+{
+  "name": "ci-lab",
+  "version": "1.0.0",
+  "description": "CI lab (server and site)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "jasmine site/spec/*.spec.js",
+    "build": "gulp build"
+  },
+  "author": "Scott Logic",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
