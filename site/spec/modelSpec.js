@@ -1,3 +1,6 @@
+/*
+Creates a builder object to make it easier to prepare models for test.
+*/
 function modelBuilder() {
 	var result = require('../model').createModel();
 	return {
@@ -25,13 +28,10 @@ function modelBuilder() {
   };
 }
 
-describe("updateModel", function() {
-	// var controller = require('../controller.js');
+describe("applyClick", function() {
 
   it("does nothing if the cell is already taken", function() {
-		// var beforeModel = createModel().noughtAt(0, 0);
 		var model = modelBuilder().noughtAt(0, 0).crossToPlay().build();
-		// beforeModel.isNoughtToPlay = false;
 		model.applyClick(0, 0);
     expect(model.isGameOver).toEqual(false);
 		expect(model.isNoughtToPlay).toEqual(false);
@@ -39,8 +39,12 @@ describe("updateModel", function() {
 
 	it("changes whose turn it is on every move", function() {
 		var model = modelBuilder().build();
+		expect(model.isNoughtToPlay).toEqual(true);
 		model.applyClick(0, 0);
-		expect(model.isGameOver).toEqual(false);
+		expect(model.isNoughtToPlay).toEqual(false);
+		model.applyClick(0, 1);
+		expect(model.isNoughtToPlay).toEqual(true);
+		model.applyClick(0, 2);
 		expect(model.isNoughtToPlay).toEqual(false);
 	});
 
