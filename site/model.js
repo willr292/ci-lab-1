@@ -1,26 +1,17 @@
 
 module.exports = {
-      self: this,
       reset: function() {
-        self.isNoughtToPlay = true,
-        self.winner = false,
-        self.isGameOver = false,
+        // TODO is it wrong to use 'this' here?
+        this.isNoughtToPlay = true;
+        this.winner = false;
+        this.isGameOver = false;
 
-        self.board = [
+        this.board = [
             ["empty", "empty", "empty"],
             ["empty", "empty", "empty"],
             ["empty", "empty", "empty"]
-        ]
-      },
-      // isNoughtToPlay: true,
-      // winner: false,
-      // isGameOver: false,
-      //
-      // board: [
-      //     ["empty", "empty", "empty"],
-      //     ["empty", "empty", "empty"],
-      //     ["empty", "empty", "empty"]
-      // ],
+        ];
 
-      _initialise: self.reset()
+        console.log("model has been reset");
+      },
     };

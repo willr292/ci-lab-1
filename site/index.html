@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>CI lab</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script type="text/javascript" src="main.js"></script>
+    <!-- warning - the 'defer' attribute is not universally supported -->
+    <script type="text/javascript" src="browserify/bundle.js" defer></script>
   </head>
-  <body onload="initController();render()">
+  <body>
     <h1>CI lab - Tic Tac Toe</h1>
     <div id="gameState" ></div>
     <div class="board-row">

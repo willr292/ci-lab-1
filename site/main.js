@@ -1,9 +1,6 @@
-// TODO write an initialiser for the html app
+var controller = require('./controller');
+var model = require('./model');
+var view = require('./view');
 
-var controller = require('controller.js');
-var model = require('model.js');
-var view = require('view.js');
-
-function init() {
-	controller.init(model, view);
-}
+model.reset();
+controller.init(model, view);
