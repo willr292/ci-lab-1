@@ -37,6 +37,16 @@ describe("applyClick", function() {
 		expect(model.isNoughtToPlay).toEqual(false);
   });
 
+	it("places noughts and crosses alternately", function() {
+		var model = modelBuilder().build();
+		model.applyClick(0, 0);
+		model.applyClick(0, 1);
+		model.applyClick(1, 2);
+		expect(model.board[0][0]).toEqual("nought");
+		expect(model.board[0][1]).toEqual("cross");
+		expect(model.board[1][2]).toEqual("nought");
+	});
+
 	it("changes whose turn it is on every move", function() {
 		var model = modelBuilder().build();
 		expect(model.isNoughtToPlay).toEqual(true);

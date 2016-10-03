@@ -21,7 +21,8 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
         if(this.board[rowClicked][columnClicked] !== "empty") {
           console.log('cell already taken');
         } else {
-          this.isNoughtToPlay = !this.isNoughtToPlay;  
+          this.board[rowClicked][columnClicked] = this.isNoughtToPlay ? "nought" : "cross";
+          this.isNoughtToPlay = !this.isNoughtToPlay;
         }
 
       };
