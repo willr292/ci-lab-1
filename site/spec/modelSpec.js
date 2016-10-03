@@ -95,4 +95,17 @@ describe("applyClick", function() {
 		expect(model.winner).toEqual("nought");
 	});
 
+	it("recognises when the game is drawn", function() {
+		var model = modelBuilder()
+									.crossAt(0, 0).noughtAt(0, 1).crossAt(0, 2)
+									.crossAt(1, 0).noughtAt(1, 1).noughtAt(1, 2)
+									.noughtAt(2, 0).crossAt(2, 1)
+									.noughtToPlay()
+									.build();
+
+		model.applyClick(2, 2);
+		expect(model.isGameOver).toEqual(true);
+		expect(model.winner).toBeFalsy();
+	});
+
 });

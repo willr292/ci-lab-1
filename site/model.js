@@ -45,8 +45,24 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
                 return;
               }
           }
-        }
 
+          // check for draw
+          var isDraw = true;
+          for (var row = 0; row <= 2; row++) {
+            for (var col = 0; col <= 2; col++) {
+              var token = this.board[row][col];
+              if(token === "empty") {
+                isDraw = false;
+              }
+            }
+          }
+
+          if(isDraw) {
+            this.winner = false;
+            this.isGameOver = true;
+            return;
+          }
+        }
       };
 
 exports.createModel = function() {
