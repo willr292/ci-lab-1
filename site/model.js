@@ -16,7 +16,7 @@ Model.prototype.reset = function() {
       };
 
 Model.prototype.applyClick = function(rowClicked, columnClicked) {
-      	console.log('clicked '+rowClicked+columnClicked);
+        console.log('clicked '+rowClicked+columnClicked);
 
         if(this.board[rowClicked][columnClicked] !== "empty") {
           console.log('cell already taken');
