@@ -4,9 +4,7 @@
   "description": "CI lab (server and site)",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server",
-    "test": "jasmine site/spec/*.spec.js",
-    "build": "gulp build"
+    "start": "node server"
   },
   "author": "Scott Logic",
   "license": "ISC",
