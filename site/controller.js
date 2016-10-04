@@ -1,3 +1,8 @@
+/*
+A module that listens to clicks on the DOM and applies those clicks to
+the underlying model, before notifying the view of the updated model.
+*/
+
 exports.init = function(model, view) {
   var allCells = document.getElementsByClassName('board-cell');
   console.log("adding click listener to "+allCells.length+" cells");

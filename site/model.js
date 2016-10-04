@@ -1,5 +1,12 @@
+/*
+A module that creates and manages a model of the game.
+*/
+
 function Model() {}
 
+/*
+Initialise the state to a fresh game.
+*/
 Model.prototype.reset = function() {
         // TODO is it wrong to use 'this' here?
         this.isNoughtToPlay = true;
@@ -15,6 +22,10 @@ Model.prototype.reset = function() {
         console.log("model has been reset");
       };
 
+/*
+Update the model to apply the user's action to place a token on a given cell.
+If the cell is already taken, this function does nothing.
+*/
 Model.prototype.applyClick = function(rowClicked, columnClicked) {
         console.log('clicked '+rowClicked+columnClicked);
 
@@ -65,6 +76,9 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
         }
       };
 
+/*
+Factory method to create a model in an initial state.
+*/
 exports.createModel = function() {
   var model = new Model();
   model.reset();
