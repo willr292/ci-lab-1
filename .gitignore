@@ -1,2 +1,4 @@
 /node_modules/
-/site/browserify/
+/site/bundle/*
+!/site/bundle/README
+test-results.xml

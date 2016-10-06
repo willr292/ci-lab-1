@@ -5,11 +5,13 @@
   "description": "CI lab (server and site)",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "build": "browserify site/main.js -o site/bundle/bundle.js"
   },
   "author": "Scott Logic",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^13.1.0",
     "express": "^4.14.0"
   }
 }
