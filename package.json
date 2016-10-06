@@ -1,6 +1,7 @@
 {
   "name": "ci-lab",
   "version": "1.0.0",
+  "private": true,
   "description": "CI lab (server and site)",
   "main": "server/index.js",
   "scripts": {
