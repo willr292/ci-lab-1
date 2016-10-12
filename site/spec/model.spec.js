@@ -4,7 +4,6 @@ Creates a builder object to make it easier to prepare models for test.
 function modelBuilder() {
   var result = require('../model').createModel();
   return {
-    // TODO have I used 'this' correctly in this function?
     build: function() {
       return result;
     },
@@ -109,3 +108,4 @@ describe("applyClick", function() {
   });
 
 });
+
