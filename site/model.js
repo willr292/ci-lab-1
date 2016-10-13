@@ -31,7 +31,7 @@ If the cell is already taken, this function does nothing.
 Model.prototype.applyClick = function(rowClicked, columnClicked) {
   console.log('clicked ' + rowClicked + columnClicked);
 
-  if (this.board[rowClicked][columnClicked] === "empty") {
+  if (!this.isGameOver && this.board[rowClicked][columnClicked] === "empty") {
     this.board[rowClicked][columnClicked] =
       this.isNoughtToPlay ? "nought" : "cross";
     this.isNoughtToPlay = !this.isNoughtToPlay;
