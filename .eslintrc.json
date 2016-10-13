@@ -1,0 +1,1 @@
+{ "extends": "google", "installedESLint": true, "env": { "browser": true }, "rules": { "linebreak-style": 0, "one-var": 0 } }
