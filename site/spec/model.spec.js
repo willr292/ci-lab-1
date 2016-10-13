@@ -36,6 +36,18 @@ describe("applyClick", function() {
     expect(model.isNoughtToPlay).toEqual(false);
   });
 
+  it("does nothing if the game is already over", function() {
+    var model = modelBuilder().noughtToPlay().build();
+    model.isGameOver = true;
+    model.winner = "cross";
+
+    model.applyClick(0, 0);
+    expect(model.board[0][0]).to.equal("empty");
+    expect(model.isGameOver).to.equal(true);
+    expect(model.winner).to.equal("cross");
+    expect(model.isNoughtToPlay).to.equal(true);
+  });
+
   it("places noughts and crosses alternately", function() {
     var model = modelBuilder().build();
     model.applyClick(0, 0);
