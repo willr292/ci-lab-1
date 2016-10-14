@@ -42,7 +42,7 @@ git config --global user.name "<username>"
     npm install
     ```
 
-    This command will connect to a remote npm repository and download the packages specified.  You can see them now in the node\_modules/ directory.
+    This command will connect to a remote npm repository and download the packages specified.  You can see them now in the `node_modules` directory.
 
 8. We now have the libraries we need to build, test and run our app, but we still need to produce that missing 'bundle.js' file.  This is going to be produced by the 'browserify' tool that is made available to us via the 'browserify' dependency.  The tool can be invoked via the script labelled 'build' in the package.json.  It bundles all the .js files from the `site` directory into a single .js file.
 
