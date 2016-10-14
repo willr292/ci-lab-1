@@ -85,7 +85,7 @@ git config --global user.name "<username>"
 	You should get some output on your console telling you that all the tests passed.
 
 ## Continuous Integration with CircleCI - unit testing
-1. Now we'll get these tests running on every check in.  Navigate to circle ci in your web browser **[URL?]**.  Log In with your GitHub credentials, and give authorisation to CircleCI to access your repositories (CircleCI needs read-only access in order to checkout and build your code).
+1. Now we'll get these tests running on every check in.  Navigate to circle ci in your web browser https://circleci.com/.  Log In with your GitHub credentials, and give authorisation to CircleCI to access your repositories (CircleCI needs read-only access in order to checkout and build your code).
 2. Request an initial build of your project by clicking 'Build Project'.  You should be able to watch the build in real-time running through various steps including `npm install`.  However, the build will fail, complaining that there is no test step configured.  We need to fix that.
 3. Edit your local version of `package.json`.  Add a new 'script' line alongside 'build' and 'start' (GOTCHA: commas are needed after each script declaration except the last one):
 
