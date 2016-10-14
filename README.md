@@ -58,7 +58,7 @@ git config --global user.name "<username>"
     npm start
     ```
 
-    This command should start up an http server which hosts our application. This command also blocks the terminal, so you should use the first terminal to continue working.  (You can kill the server at any time with `Ctrl+C`, but this will bring down the app). 
+    This command should start up an http server which hosts our application. This command also blocks the terminal, so you should use the first terminal to continue working.  (You can kill the server at any time with `Ctrl+C`, but this will bring down the app).
 
 10. You can now access the web application by launching a browser and navigating to `http://localhost:3000/`.  As you can see, it's a very simple game of Tic-Tac-Toe / Noughts-and-Crosses.  The app is entirely self-contained - to play against an opponent you need to take turns with the mouse!  Have a click around - note that to restart the game you need to reload the whole web page.
 
@@ -70,13 +70,13 @@ git config --global user.name "<username>"
 	- `model.js` has a function, `createModel` to create a representation of the game as a JavaScript object.  This returns an object that is initialised to an 'empty board' state (see `Model.prototype.reset`), and that has another function to update the state of the game when a given cell is clicked (`Model.prototype.applyClick`).  **This function contains all the core game logic - including how to decide if the game has ended.**
 	- `view.js` has a single function that updates the HTML on the web page to reflect a given model object.
 	- `controller.js` has a function which attaches a 'click listener' to each of the cells in the HTML grid.  When a cell is clicked, the controller invokes the `applyClick` method on the model and finally updates the HTML by invoking the function on the view object.
-	- `main.js` simply ties everything together and initiates the controller. 
+	- `main.js` simply ties everything together and initiates the controller.
 
 ## Testing
 1. As mentioned, the core of the game logic is in the model.js file.  We have some unit tests for this file - look in the `site/spec` directory.  The file here, `model.spec.js`, is written in JavaScript using functions from a library called 'chai'.  (You may have noticed that 'chai' was one our dependencies in package.json).  Take a look:
 	-  At the top of the file is a builder function that makes it easy to prepare a game model in any given state.
 	-  The tests are lower down.  We're only testing the 'applyClick' function, but we're testing several scenarios.  See how each test declares what is required, before building a model, invoking `applyClick`, and verifying the end state of the model.  Again, it's not essential to fully understand the syntax here - the key takeaway is that we have unit tests to verify the behaviour of the model object.
-2. The tests can be run using a tool called 'mocha' (another dependency declared in package.json).  From the top-level directory, run 
+2. The tests can be run using a tool called 'mocha' (another dependency declared in package.json).  From the top-level directory, run
 
 	```
 	./node_modules/.bin/mocha site/spec/*.spec.js
@@ -135,7 +135,7 @@ git config --global user.name "<username>"
 6. Normally, a developer would now fix the bug right away.  But let's demonstrate that CircleCI will fail a build if there is a test failure.  Use the above git commands to double-check your change, commit with a sensible message, and push to GitHub.  Check on CircleCI that the build does indeed fail.
 7. Now go ahead and fix the problem.  You'll need to make a change to the 'applyClick' function in `site/model.js`.  HINT: look at what the the first 'if' clause is doing and see if you can modify its conditional check.
 8. Once you've made your fix locally, re-run your tests and check that they all pass.
-9. Now commit and push your fix to GitHub, and check that CircleCI builds again. 
+9. Now commit and push your fix to GitHub, and check that CircleCI builds again.
 
 ## Continuous Integration with CircleCI - linting
 1. Another class of problem with an application's code base is stylistic errors.  Processes called 'linters' can analyse your code for errors and can fail a build in the same way a test runner would.
@@ -185,5 +185,13 @@ git config --global user.name "<username>"
 Explore extra features (provide link).
 
 ## Extensions
-Another bug to fix
+The game has another bug!
+
+1. Find the bug
+1. Write any tests to cover the bug
+1. Make the tests pass
+1. Push your changes
+
+If you still have time then see the following guide to setting up continuous deployment using [heroku](https://www.heroku.com/):
+
 https://circleci.com/docs/continuous-deployment-with-heroku/
