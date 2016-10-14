@@ -76,7 +76,9 @@ git config --global user.name "<username>"
 	-  The tests are lower down.  We're only testing the 'applyClick' function, but we're testing several scenarios.  See how each test declares what is required, before building a model, invoking `applyClick`, and verifying the end state of the model.  Again, it's not essential to fully understand the syntax here - the key takeaway is that we have unit tests to verify the behaviour of the model object.
 2. The tests can be run using a tool called 'mocha' (another dependency declared in package.json).  From the top-level directory, run 
 
-	`./node_modules/.bin/mocha site/spec/*.spec.js`
+	```
+	./node_modules/.bin/mocha site/spec/*.spec.js
+	```
 
 	You should get some output on your console telling you that all the tests passed.
 
