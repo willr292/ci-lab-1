@@ -119,17 +119,19 @@ git config --global user.name "<username>"
 
 4. Now let's add some custom rules.  Create a file in your local repository root directory called .eslintrc.json.  Give it the following content (don't worry about understanding what these rules mean; not important for this lab):
 
-    `{
-	    "extends": "google",
-	    "installedESLint": true,
-	    "env": {
-	      "browser": true
-	    },
-	    "rules": {
-	      "linebreak-style": 0,
-	      "one-var": 0
-	    }
-    }`
+```
+{
+    "extends": "google",
+    "installedESLint": true,
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "linebreak-style": 0,
+      "one-var": 0
+    }
+}
+```
 
 5. Specify that eslint should run immediately before the unit tests by editing the 'test' script in `package.json`.  Change it to:
 
