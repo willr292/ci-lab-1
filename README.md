@@ -17,7 +17,9 @@ git config --global user.name "<username>"
 
 ## Project Setup
 1. Create a GitHub account for yourself if you don't have one already (it is free!)
-2. From the GitHub website, fork this repository - your new repository will be associated with your own account on GitHub.  You can use the same name as this repository.  You should be able to see your new repository within GitHub - including its history, which is copied as part of the fork.  **Exactly which button to click to see commit history?**
+2. From the GitHub website, fork this repository
+    - your new repository will be associated with your own account on GitHub
+    - you should be able to see your new repository within GitHub - including its history; select `commits` to see this history
 3. Open a terminal, navigate to a directory that you normally use for your own development, and make a local clone of your new GitHub repository. **COMMAND** 
 4. Examine the structure of this project.  Take a look at the site/index.html file.  See that it references bundle.js, and that this file does not currently exist.
 5. Also see that there is very little so far in your top-level directory.
