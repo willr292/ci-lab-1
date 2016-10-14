@@ -24,9 +24,9 @@ git config --global user.name "<username>"
     - you should be able to see your new repository within GitHub - including its history; select `commits` to see this history
 3. Open a terminal, navigate to a directory that you normally use for your own development, and make a local clone of your new GitHub repository
 
-```
-git clone https://github.com/{USER_NAME}/ci-lab.git
-```
+    ```
+    git clone https://github.com/{USER_NAME}/ci-lab.git
+    ```
 
 4. Examine the structure of this project.  Take a look at the site/index.html file.  See that it references bundle.js, and that this file does not currently exist.
 5. Also see that there is very little so far in your top-level directory.
@@ -36,25 +36,25 @@ git clone https://github.com/{USER_NAME}/ci-lab.git
 	- a 'start' script that invokes a 'node' server
 7. NPM is our build tool and is installed on your machine.  We're going to run a few npm commands to get our project up and running.  The behaviour of the commands is driven by the package.json file.  Start with:
 
-```
-npm install
-```
+    ```
+    npm install
+    ```
 
     This command will connect to a remote npm repository and download the packages specified.  You can see them now in the node\_modules/ directory.
 
 8. We now have the libraries we need to build, test and run our app, but we still need to produce that missing 'bundle.js' file.  This is going to be produced by the 'browserify' tool that is made available to us via the 'browserify' dependency.  The tool can be invoked via the script labelled 'build' in the package.json.  It bundles all the .js files from the `site` directory into a single .js file.
 
-```
-npm run build
-```
+    ```
+    npm run build
+    ```
 
     See that the bundle.js now exists.
 
 9. You should now be able to start the server.  Open a new terminal window, navigate to the top-level directory of this repo and run
 
-```
-npm start
-```
+    ```
+    npm start
+    ```
 
     This command should start up an http server which hosts our application. This command also blocks the terminal, so you should use the first terminal to continue working.  (You can kill the server at any time with `Ctrl+C`, but this will bring down the app). 
 
@@ -85,38 +85,38 @@ npm start
 2. Request an initial build of your project by clicking 'Build Project'.  You should be able to watch the build in real-time running through various steps including `npm install`.  However, the build will fail, complaining that there is no test step configured.  We need to fix that.
 3. Edit your local version of `package.json`.  Add a new 'script' line alongside 'build' and 'start' (GOTCHA: commas are needed after each script declaration except the last one):
 
-```
-"test": "mocha site/spec/*.spec.js"
-```
+    ```
+    "test": "mocha site/spec/*.spec.js"
+    ```
 
     The name 'test' is significant to the npm build tool - it expects it to be there, and its absence is what is causing the failure in CircleCI.  The rest of the line is just the command to invoke - it will automatically find the 'mocha' script in `./node_modules` directory.
 
     Having made this change, you should now be able to run your tests from your terminal with
 
-```
-npm test
-```
+    ```
+    npm test
+    ```
 
     The tests should all pass, just as before.
 
 4. You now need to push your changed `package.json` to the GitHub repository.  Let's just check exactly what has changed.  Run the following:
 
-```
-git status
-```
+    ```
+    git status
+    ```
 
     This should tell you that your package.json file has change.  It is the only file we have changed so far.  If you're wondering why the the generated files like `bundle.js` and the `./node_modules` directory are not recognised by this command, the repo already has a `.gitignore` file configured to explicitly ignore these.
 
-```
-git diff
-```
+    ```
+    git diff
+    ```
 
     This command gives an in-depth look at what you've changed (just added one line).
 
-```
-git commit -a -m "Specified a test script in package.json"
-git push
-```
+    ```
+    git commit -a -m "Specified a test script in package.json"
+    git push
+    ```
 
     The 'commit' command adds all the changes you've made to your local Git repository as a 'commit', and associates a message explaining the change.  The 'push' command transmits the commit to the remote GitHub repository.
 
@@ -137,39 +137,39 @@ git push
 1. Another class of problem with an application's code base is stylistic errors.  Processes called 'linters' can analyse your code for errors and can fail a build in the same way a test runner would.
 2. We'll use a tool called 'eslint'.  For starters, we need to make this tool available by declaring it as a dependency of our project.  We could do this by hand-editing `package.json`, but a faster and more reliable way is with an npm command:
 
-```
-npm install eslint --save
-```
+    ```
+    npm install eslint --save
+    ```
 
     This command installs the module to `node_modules` and the `--save` flag adds an entry to your package.json.
 
 3. We'll also need to supply some stylistic rules for eslint to check.  Style is, after all, a matter of taste, and you're free to configure the style you want for your team.  However, configuring all rules from scratch would take ages, so let's use some rules from Google to get started.  Install another dependency:
 
-```
-npm install eslint-config-google --save
-```
+    ```
+    npm install eslint-config-google --save
+    ```
 
 4. Now let's add some custom rules.  Create a file in your local repository root directory called .eslintrc.json.  Give it the following content (don't worry about understanding what these rules mean; not important for this lab):
 
-```
-{
-    "extends": "google",
-    "installedESLint": true,
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "linebreak-style": 0,
-      "one-var": 0
+    ```
+    {
+        "extends": "google",
+        "installedESLint": true,
+        "env": {
+          "browser": true
+        },
+        "rules": {
+          "linebreak-style": 0,
+          "one-var": 0
+        }
     }
-}
-```
+    ```
 
 5. Specify that eslint should run immediately before the unit tests by editing the 'test' script in `package.json`.  Change it to:
 
-```
-"test": "eslint site/*.js && mocha site/spec/*.spec.js",
-```
+    ```
+    "test": "eslint site/*.js && mocha site/spec/*.spec.js",
+    ```
 
 6. Now try running `npm test` again.  There should be linting failures.  Run the Git commands again to commit and push to GitHub.  See that CircleCI fails your build again.
 
