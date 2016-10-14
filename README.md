@@ -28,6 +28,8 @@ git config --global user.name "<username>"
     git clone https://github.com/{USER_NAME}/ci-lab.git
     ```
 
+    This will automatically create a directory named `ci-lab`
+
 4. Examine the structure of this project.  Take a look at the site/index.html file.  See that it references bundle.js, and that this file does not currently exist.
 5. Also see that there is very little so far in your top-level directory.
 6. Take a look at package.json.  This is a descriptor for the project, and ***it drives our build tool, which is npm***.  Settings to note:
