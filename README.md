@@ -3,8 +3,12 @@ We're going to... **EXPLAIN WHAT WE'LL ACHIEVE IN THE LAB**
 
 
 ## Environment Setup
-Check if node and npm are installed (and what version?)
-Check that you can run git commands
+Check that node and npm are installed (version agnostic)
+```
+node -v
+npm -v
+```
+Check that you can run git commands - `git status`
 - what about git setup?  Do we need things like
 git config --global user.email "<username>@users.noreply.github.com"
 git config --global user.name "<username>"
