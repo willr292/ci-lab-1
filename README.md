@@ -184,7 +184,7 @@ git config --global user.name "<username>"
 ## Additional features of CircleCI
 Explore extra features (provide link).
 
-## Extensions
+## Extension 1
 The game has another bug!
 
 1. Find the bug
@@ -192,6 +192,7 @@ The game has another bug!
 1. Make the tests pass
 1. Push your changes
 
-If you still have time then see the following guide to setting up continuous deployment using [heroku](https://www.heroku.com/):
+## Extension 2
+See the following guide to setting up continuous deployment using [heroku](https://www.heroku.com/):
 
 https://circleci.com/docs/continuous-deployment-with-heroku/
