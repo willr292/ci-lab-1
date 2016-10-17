@@ -1,5 +1,5 @@
 # CI Lab Instructions
--We're going to... **EXPLAIN WHAT WE'LL ACHIEVE IN THE LAB**
+You're going to introduce Continuous Integration to a simple JavaScript application.  The application is going to be built using the 'npm' build tool.  The application code is versioned using Git, and the central repo will be hosted at GitHub.  You'll have your own personal GitHub central repo so as to stay isolated from others.  Finally, you'll be using CircleCI as your online CI server.  CircleCI is free to use, and is highly integrated with GitHub.
 
 
 ## Environment Setup
