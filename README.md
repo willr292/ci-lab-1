@@ -25,7 +25,7 @@ git config --global user.name "<username>"
 3. Open a terminal, navigate to a directory that you normally use for your own development, and make a local clone of your new GitHub repository
 
     ```
-    git clone https://github.com/{USER_NAME}/ci-lab.git
+    git clone https://github.com/{GITHUB_USER_NAME}/ci-lab.git
     ```
 
     This will automatically create a directory named `ci-lab`
