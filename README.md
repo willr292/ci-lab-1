@@ -1,5 +1,5 @@
 # CI Lab Instructions
-We're going to... **EXPLAIN WHAT WE'LL ACHIEVE IN THE LAB**
+-We're going to... **EXPLAIN WHAT WE'LL ACHIEVE IN THE LAB**
 
 
 ## Environment Setup
@@ -10,12 +10,13 @@ node -v
 npm -v
 ```
 
-Check that you can run git commands - `git status`
-- what about git setup?  Do we need things like
-git config --global user.email "<username>@users.noreply.github.com"
-git config --global user.name "<username>"
+Complete your Git setup (also verifies that git is working on your computer):
 
-
+```
+git status
+git config --global user.email "<github_username>@users.noreply.github.com"
+git config --global user.name "<github_username>"
+```
 
 ## Project Setup
 1. Create a GitHub account for yourself if you don't have one already (it is free!)
