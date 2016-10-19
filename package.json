@@ -7,13 +7,15 @@
   "scripts": {
     "build": "browserify site/main.js -o site/bundle/bundle.js",
     "start": "node server",
-    "test": "mocha site/spec/*.spec.js"
+    "test": "eslint site/*.js && mocha site/spec/*.spec.js",
   },
   "author": "Scott Logic",
   "license": "ISC",
   "dependencies": {
     "browserify": "^13.1.0",
     "chai": "^3.5.0",
+    "eslint": "^3.8.1",
+    "eslint-config-google": "^0.7.0",
     "express": "^4.14.0",
     "mocha": "^3.1.0"
   }
